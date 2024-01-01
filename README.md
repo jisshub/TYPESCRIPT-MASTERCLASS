@@ -4,6 +4,10 @@
 
 [Basic Types](#basic-types)
 
+[Better Workflow with tsconfig](#better-workflow-with-tsconfig)
+
+[Arrays & Object Literals](#arrays--object-literals)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -56,3 +60,80 @@ console.log(u);
 console.log(n);
 
 ```
+
+## Better Workflow with tsconfig
+
+- Create tsconfig.json file in the root of the project directory using below command:
+
+```bash
+tsc --init
+```
+
+- Use watch flag to automatically find the changes in the ts file and make updates based on that in js file.
+- It watches our typescript files and every time we make a change and save the file, it will re-run the compiler and code is updated.
+
+```bash
+tsc --watch ./src/index.ts
+```
+
+- Ask node to watch changes happening in index.js file. We use watch flag for same.
+
+```bash
+node --watch ./dist/index.js
+```
+
+- It watches for the changes in javascript file and run the compiler everytime some change happens.
+
+
+## Arrays & Object Literals
+
+
+```ts
+
+// array types
+let names: string[] = ['hello', 'world', 'new', 'world'];
+
+let ages: number[] = [1, 2, 3, 4, 5];
+
+let mixed: (string | number)[] = ['hello', 1, 'world', 2];
+
+
+// pushing new values into arrays
+
+names.push('hello');
+ages.push(6);
+mixed.push(3, 'world');
+
+// object literals
+
+let user: {
+    name: string,
+    age: number,
+    isAlive: boolean
+} = {
+    name: 'hello',
+    age: 1,
+    isAlive: true
+}
+
+user.name = 'world';
+user.age = 2;
+user.isAlive = false;
+
+// type inference with object literals
+
+let person = {
+    name: 'anand',
+    score: 10
+}
+
+person.name = 'justin';
+person.score = 20;
+```
+
+## Functions
+
+https://netninja.dev/courses/typescript-masterclass/lectures/50286074
+
+
+
