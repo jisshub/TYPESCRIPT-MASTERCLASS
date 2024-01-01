@@ -1,6 +1,7 @@
 # TypeScript Masterclass
 
 [Installing & Compiling](#installing--compiling)
+
 [Basic Types](#basic-types)
 
 ![](./images/Screenshot%202023-12-31%20120217.png)
