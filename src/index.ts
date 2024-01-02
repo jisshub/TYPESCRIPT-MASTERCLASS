@@ -41,3 +41,30 @@ person.name = 'justin';
 person.score = 20;
 
 
+// functions
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+console.log('Result of Addition: ', add(1, 2));
+
+function subtract(a: number, b: number): number {
+    return a - b;
+}
+
+console.log('Result of Subtraction: ', subtract(1, 2));
+
+function addAllNumbers(items: number[]): void {
+    const total =  items.reduce((a, b) => a + b, 0);
+    console.log('Total: ', total);
+}
+
+addAllNumbers([1, 2, 3, 4, 5]);
+
+// return type inference
+function formatGreeeting(name: string, greeting: string) {
+    return `${greeting}, ${name}`;
+}
+
+const greeting = formatGreeeting('anand', 'hello');
+console.log('Greeting: ', greeting);
