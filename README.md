@@ -8,6 +8,10 @@
 
 [Arrays & Object Literals](#arrays--object-literals)
 
+[Functions](#functions)
+
+[Any Type](#any-type)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -165,3 +169,5 @@ function formatGreeeting(name: string, greeting: string) {
 const greeting = formatGreeeting('anand', 'hello');
 console.log('Greeting: ', greeting);
 ```
+
+## Any Type
