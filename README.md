@@ -172,6 +172,13 @@ console.log('Greeting: ', greeting);
 
 ## Any Type
 
+- Any type is useful when migrating from javascript to typescript.
+
+- It allows us to use any type in our code.
+
+- Any type wont cause any problems in our code.
+
+
 ```ts
 let notSure: any = 4;
 notSure = 'hello';
