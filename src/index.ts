@@ -68,3 +68,39 @@ function formatGreeeting(name: string, greeting: string) {
 
 const greeting = formatGreeeting('anand', 'hello');
 console.log('Greeting: ', greeting);
+
+
+// Any Type
+
+let randomValue: any;
+
+randomValue = 'hello';
+
+randomValue = false;
+
+randomValue = {
+    name: 'anand',
+    score: 10
+}
+
+console.log('Random Value: ', randomValue);
+
+// any type in arrays
+
+let names2: any[] = ['hello', 'world', 'new', 'world'];
+
+names2.push('hello');
+
+names2.push(1);
+
+names2.push(true);
+
+console.log('Names: ', names2);
+
+// functions with any type
+
+function addAny(a: any, b: any): any {
+    return a + b;
+}
+
+console.log('Result of Addition: ', addAny(1, 2));

@@ -171,3 +171,48 @@ console.log('Greeting: ', greeting);
 ```
 
 ## Any Type
+
+```ts
+let notSure: any = 4;
+notSure = 'hello';
+notSure = true;
+```
+
+
+```ts
+
+// Any Type
+
+let randomValue: any;
+
+randomValue = 'hello';
+
+randomValue = false;
+
+randomValue = {
+    name: 'anand',
+    score: 10
+}
+
+console.log('Random Value: ', randomValue);
+
+// any type in arrays
+
+let names2: any[] = ['hello', 'world', 'new', 'world'];
+
+names2.push('hello');
+
+names2.push(1);
+
+names2.push(true);
+
+console.log('Names: ', names2);
+
+// functions with any type
+
+function addAny(a: any, b: any): any {
+    return a + b;
+}
+
+console.log('Result of Addition: ', addAny(1, 2));
+```
