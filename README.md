@@ -12,6 +12,8 @@
 
 [Any Type](#any-type)
 
+[Tuples](#tuples)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -223,3 +225,5 @@ function addAny(a: any, b: any): any {
 
 console.log('Result of Addition: ', addAny(1, 2));
 ```
+
+## Tuples
