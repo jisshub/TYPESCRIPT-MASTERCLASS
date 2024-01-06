@@ -334,3 +334,7 @@ A union type is a type formed from two or more other types, representing values 
 In the code, a function named displayData is declared. This function takes one argument data that can be either a string or a number, as indicated by the union type string | number. The void keyword indicates that this function does not return a value.
 
 Finally, the displayData function is called twice with different types of arguments - once with a string 'Hello' and once with a number 123. Both of these calls are valid because data is declared as a union type string | number.
+
+## Type Guards
+
+https://netninja.dev/courses/typescript-masterclass/lectures/50286067
