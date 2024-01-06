@@ -78,3 +78,10 @@ user2.name = 'world';
 user2.age = 2;
 user2.isAlive = false;
 console.log('User: ', user2);
+var employee1 = {
+    name: 'John Doe',
+    age: 30,
+    position: 'Software Engineer',
+    salary: 5000
+};
+console.log('Employee: ', employee1);

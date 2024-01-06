@@ -134,3 +134,21 @@ user2.age = 2;
 user2.isAlive = false;
 
 console.log('User: ', user2);
+
+// type aliases
+
+type Employee = {
+    name: string,
+    age: number,
+    position: string,
+    salary: number
+}
+
+let employee1: Employee = {
+    name: 'John Doe',
+    age: 30,
+    position: 'Software Engineer',
+    salary: 5000
+}
+
+console.log('Employee: ', employee1);

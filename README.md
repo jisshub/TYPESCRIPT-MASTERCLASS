@@ -16,6 +16,8 @@
 
 [Interfaces](#interfaces)
 
+[Type Aliases](#type-aliases)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -283,3 +285,31 @@ First, an interface `Person` is defined. In TypeScript, an interface is a way to
 Next, a variable `user2` of type `Person` is declared and initialized with an object. The object has properties `name`, `age`, and `isAlive` with values 'hello', 1, and true respectively. This object matches the structure defined by the `Person` interface, so it's a valid value for the `user2` variable.
 
 Then, the properties of `user2` are updated. The `name` property is updated to 'world', the `age` property is updated to 2, and the `isAlive` property is updated to false.
+
+## Type Aliases
+
+```ts
+type Employee = {
+    name: string,
+    age: number,
+    position: string,
+    salary: number
+}
+
+let employee1: Employee = {
+    name: 'John Doe',
+    age: 30,
+    position: 'Software Engineer',
+    salary: 5000
+}
+
+console.log('Employee: ', employee1);
+```
+
+### Exaplanation
+
+In TypeScript, a type alias is a way to give a name to a type. It doesn't create a new type - it creates a new name to refer to that type. The Employee type is an object type with four properties: name of type string, age of type number, position of type string, and salary of type number.
+
+Next, a variable employee1 of type Employee is declared and initialized with an object. The object has properties name, age, position, and salary with values 'John Doe', 30, 'Software Engineer', and 5000 respectively. This object matches the structure defined by the Employee type, so it's a valid value for the employee1 variable.
+
+Finally, the employee1 variable is logged to the console with a preceding string 'Employee: '. This will print something like Employee: { name: 'John Doe', age: 30, position: 'Software Engineer', salary: 5000 } to the console.
