@@ -14,6 +14,8 @@
 
 [Tuples](#tuples)
 
+[Interfaces](#interfaces)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -227,3 +229,57 @@ console.log('Result of Addition: ', addAny(1, 2));
 ```
 
 ## Tuples
+
+```ts
+let person2: [string, number, boolean] = ['hello', 1, true];
+
+person2[0] = 'world';
+person2[1] = 2;
+person2[2] = false;
+
+console.log('Person: ', person2);
+```
+
+### Explanation 
+
+In TypeScript, a tuple is a special type that allows you to create an array where the type of a fixed number of elements is known, but need not be the same. This is different from a regular array where all elements are of the same type.
+
+In your code, `person2` is a tuple that is expected to have three elements. The first element is a string, the second is a number, and the third is a boolean. 
+
+Here's a breakdown:
+
+- `let person2:` This is declaring a variable named `person2`. The `let` keyword allows you to declare variables that are limited in scope to the block, statement, or expression in which they are used. This is different from the `var` keyword, which defines a variable globally or locally to an entire function regardless of block scope.
+
+- `[string, number, boolean]` This is the type annotation for the `person2` variable. It's saying that `person2` is a tuple where the first element is a string, the second element is a number, and the third element is a boolean.
+
+- `= ['hello', 1, true];` This is assigning an initial value to the `person2` tuple. The string 'hello' is the first element, the number 1 is the second element, and `true` is the third element.
+
+## Interfaces
+
+```typescript
+interface Person {
+    name: string,
+    age: number,
+    isAlive: boolean
+}
+
+let user2: Person = {
+    name: 'hello',
+    age: 1,
+    isAlive: true
+}
+
+user2.name = 'world';
+user2.age = 2;
+user2.isAlive = false;
+
+console.log('User: ', user2);
+```
+
+### Explanation
+
+First, an interface `Person` is defined. In TypeScript, an interface is a way to define a contract on a function or object to have a particular structure. The `Person` interface specifies that any object assigned to a variable of type `Person` must have three properties: `name` of type `string`, `age` of type `number`, and `isAlive` of type `boolean`.
+
+Next, a variable `user2` of type `Person` is declared and initialized with an object. The object has properties `name`, `age`, and `isAlive` with values 'hello', 1, and true respectively. This object matches the structure defined by the `Person` interface, so it's a valid value for the `user2` variable.
+
+Then, the properties of `user2` are updated. The `name` property is updated to 'world', the `age` property is updated to 2, and the `isAlive` property is updated to false.

@@ -104,3 +104,33 @@ function addAny(a: any, b: any): any {
 }
 
 console.log('Result of Addition: ', addAny(1, 2));
+
+// tuples
+
+let person2: [string, number, boolean] = ['hello', 1, true];
+
+person2[0] = 'world';
+person2[1] = 2;
+person2[2] = false;
+
+console.log('Person: ', person2);
+
+// interfaces
+
+interface Person {
+    name: string,
+    age: number,
+    isAlive: boolean
+}
+
+let user2: Person = {
+    name: 'hello',
+    age: 1,
+    isAlive: true
+}
+
+user2.name = 'world';
+user2.age = 2;
+user2.isAlive = false;
+
+console.log('User: ', user2);

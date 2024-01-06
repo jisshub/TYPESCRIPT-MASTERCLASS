@@ -63,3 +63,18 @@ function addAny(a, b) {
     return a + b;
 }
 console.log('Result of Addition: ', addAny(1, 2));
+// tuples
+var person2 = ['hello', 1, true];
+person2[0] = 'world';
+person2[1] = 2;
+person2[2] = false;
+console.log('Person: ', person2);
+var user2 = {
+    name: 'hello',
+    age: 1,
+    isAlive: true
+};
+user2.name = 'world';
+user2.age = 2;
+user2.isAlive = false;
+console.log('User: ', user2);
