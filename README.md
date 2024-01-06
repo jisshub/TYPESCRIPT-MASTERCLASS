@@ -18,6 +18,8 @@
 
 [Type Aliases](#type-aliases)
 
+[Union Types](#union-types)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -306,10 +308,29 @@ let employee1: Employee = {
 console.log('Employee: ', employee1);
 ```
 
-### Exaplanation
+### Explanation
 
 In TypeScript, a type alias is a way to give a name to a type. It doesn't create a new type - it creates a new name to refer to that type. The Employee type is an object type with four properties: name of type string, age of type number, position of type string, and salary of type number.
 
 Next, a variable employee1 of type Employee is declared and initialized with an object. The object has properties name, age, position, and salary with values 'John Doe', 30, 'Software Engineer', and 5000 respectively. This object matches the structure defined by the Employee type, so it's a valid value for the employee1 variable.
 
 Finally, the employee1 variable is logged to the console with a preceding string 'Employee: '. This will print something like Employee: { name: 'John Doe', age: 30, position: 'Software Engineer', salary: 5000 } to the console.
+
+## Union Types
+
+```ts
+function displayData(data: string | number): void {
+    console.log('Data:', data);
+}
+
+displayData('Hello'); // Output: Data: Hello
+displayData(123); // Output: Data: 123
+```
+
+### Explanation
+
+A union type is a type formed from two or more other types, representing values that may be any one of those types. We use the vertical bar (|) to separate each type, so number | string means a value that can be either a number or a string.
+
+In the code, a function named displayData is declared. This function takes one argument data that can be either a string or a number, as indicated by the union type string | number. The void keyword indicates that this function does not return a value.
+
+Finally, the displayData function is called twice with different types of arguments - once with a string 'Hello' and once with a number 123. Both of these calls are valid because data is declared as a union type string | number.

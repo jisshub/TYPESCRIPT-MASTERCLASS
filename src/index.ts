@@ -152,3 +152,13 @@ let employee1: Employee = {
 }
 
 console.log('Employee: ', employee1);
+
+
+// union types
+
+function displayData(data: string | number): void {
+    console.log('Data:', data);
+}
+
+displayData('Hello'); // Output: Data: Hello
+displayData(123); // Output: Data: 123

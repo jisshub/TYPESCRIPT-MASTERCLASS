@@ -85,3 +85,9 @@ var employee1 = {
     salary: 5000
 };
 console.log('Employee: ', employee1);
+// union types
+function displayData(data) {
+    console.log('Data:', data);
+}
+displayData('Hello'); // Output: Data: Hello
+displayData(123); // Output: Data: 123
