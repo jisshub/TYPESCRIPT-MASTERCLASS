@@ -20,6 +20,12 @@
 
 [Union Types](#union-types)
 
+[Type Guards](#type-guards)
+
+[Reusable Interfaces](#reusable-interfaces)
+
+[Function Signature](#function-signature)
+
 ![](./images/Screenshot%202023-12-31%20120217.png)
 
 ## Installing & Compiling
@@ -337,4 +343,105 @@ Finally, the displayData function is called twice with different types of argume
 
 ## Type Guards
 
-https://netninja.dev/courses/typescript-masterclass/lectures/50286067
+Type guards in TypeScript are a way to narrow down the type of a variable within a certain scope. They are used to tell the compiler that the variable is of a specific type, and this information is then used to provide better autocompletion and error checking.
+
+Here's a simple example of a type guard:
+
+```js
+function isNumber(x: any): x is number {
+    return typeof x === "number";
+}
+
+let item: string | number = Math.random() < 0.5 ? "hello" : 123;
+
+if (isNumber(item)) {
+    console.log(item.toFixed(2)); // This line is error-free because TypeScript knows `item` is a number in this scope.
+} else {
+    console.log(item.toUpperCase()); // TypeScript knows `item` is a string in this scope.
+}
+```
+
+In this example, isNumber is a type guard function. It checks if x is a number, and if so, it informs TypeScript that within the if block where isNumber(item) is true, item should be treated as a number.
+
+
+## Reusable Interfaces 
+
+### Example - 1 
+
+```ts
+interface Customer {
+    name: string;
+    age: number;
+    email: string;
+}
+```
+
+In TypeScript, an interface is a way to define a contract on a function or object to have a particular structure. 
+
+In simpler terms, an interface in TypeScript is like a blueprint or a set of rules that an object should follow. It defines what kind of properties and methods an object should have, along with their types.
+
+### Explanation 
+
+The Customer interface in your code specifies that any object assigned to a variable of type Customer must have three properties: name of type string, age of type number, and email of type string.
+
+So, if you have a variable of type Customer, you can assign to it an object that has name, age, and email properties, like so:
+
+```ts
+let customer: Customer = {
+    name: 'John Doe',
+    age: 30,
+    email: 'john.doe@example.com'
+};
+```
+
+In this case, customer is a valid Customer object because it has all the properties required by the Customer interface, and each property is of the correct type.
+
+
+### Example - 2
+
+```ts
+interface hasQuantity {
+    quantity: number
+}
+
+const product: hasQuantity = {
+    quantity: 10
+}
+
+function printQuantity(item: hasQuantity) {
+    console.log('Quantity: ', item.quantity);
+}
+
+const fruit = {
+    name: 'apple',
+    quantity: 10
+}
+
+const vegetable = {
+    name: 'potato',
+    quantity: 20
+}
+
+printQuantity(fruit);
+printQuantity(vegetable);
+```
+
+### Explanation
+
+1. interface hasQuantity { quantity: number }: This line defines an interface named hasQuantity. Any object that matches this interface should have a property named quantity of type number.
+
+2. const product: hasQuantity = { quantity: 10 }: Here, a constant product is declared with the type hasQuantity. It means that product should adhere to the structure defined by the hasQuantity interface. In this case, product is an object with a quantity property of type number.
+
+3. function printQuantity(item: hasQuantity) { console.log('Quantity: ', item.quantity); }: This function printQuantity takes one argument item of type hasQuantity. Inside the function, it logs the quantity property of the item.
+
+4. const fruit = { name: 'apple', quantity: 10 } and const vegetable = { name: 'potato', quantity: 20 }: These lines declare two objects fruit and vegetable with properties name and quantity. Even though these objects have more properties than required by the hasQuantity interface, they can still be treated as hasQuantity because they have at least all the properties required by hasQuantity.
+
+5. printQuantity(fruit); printQuantity(vegetable);: These lines call the printQuantity function with fruit and vegetable as arguments. Even though fruit and vegetable have more properties than defined in the hasQuantity interface, TypeScript's structural type system allows them to be passed to the function because they have at least all the properties required by hasQuantity.
+
+In summary, this code demonstrates how interfaces in TypeScript can be used to enforce certain structures for objects and how TypeScript's structural type system allows objects with extra properties to be assigned to variables or passed to functions expecting a certain interface.
+
+
+## Function Signature 
+
+https://netninja.dev/courses/typescript-masterclass/lectures/50286726
+

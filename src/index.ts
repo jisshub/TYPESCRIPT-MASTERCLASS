@@ -162,3 +162,63 @@ function displayData(data: string | number): void {
 
 displayData('Hello'); // Output: Data: Hello
 displayData(123); // Output: Data: 123
+
+
+// type guards in typescript
+
+function isNumber(x: any): x is number {
+    return typeof x === "number";
+}
+
+let item: string | number = Math.random() < 0.5 ? "hello" : 123;
+
+if (isNumber(item)) {
+    console.log(item.toFixed(2)); // This line is error-free because TypeScript knows `item` is a number in this scope.
+} else {
+    console.log(item.toUpperCase()); // TypeScript knows `item` is a string in this scope.
+}
+
+
+// Interface
+
+
+// Example - 1
+interface hasName {
+    name: string
+}
+
+const person3: hasName = {
+    name: 'anand'
+}
+
+console.log('Person: ', person3);
+
+
+// Example - 2
+
+interface hasQuantity {
+    quantity: number
+}
+
+const product: hasQuantity = {
+    quantity: 10
+}
+
+function printQuantity(item: hasQuantity) {
+    console.log('Quantity: ', item.quantity);
+}
+
+const fruit = {
+    name: 'apple',
+    quantity: 10
+}
+
+const vegetable = {
+    name: 'potato',
+    quantity: 20
+}
+
+printQuantity(fruit);
+printQuantity(vegetable);
+
+
